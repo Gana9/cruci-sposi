@@ -32,6 +32,11 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Pompiere', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+// Paragrafi a dimensione doppia rispetto al testo base del tema.
+p {
+  font-size: 2em;
+}
+
 // Il tema "minimal" dispone header e contenuto in due colonne sugli schermi
 // larghi: qui li rimettiamo in colonna singola, header centrato in alto.
 .wrapper {
