@@ -48,6 +48,9 @@ section {
   float: none;
   width: auto;
   position: static;
+  // Rimuove le linee di separazione che il tema "minimal" aggiunge al
+  // <section> sotto i 960px (border: 1px solid #e5e5e5).
+  border: 0;
 }
 
 // Fiori "filigrana" fissi agli angoli della pagina.
@@ -77,21 +80,30 @@ body::after {
 }
 
 header {
-  background: linear-gradient(135deg, $magenta-dark 0%, $magenta-darker 65%, $yellow 150%);
-  border-radius: 8px;
+  background: transparent;
   text-align: center;
-  padding: 1.8rem 1rem;
-  margin-bottom: 1.5rem;
+  padding: 1rem 0 0.5rem;
+  margin-bottom: 1rem;
 
-  h1 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    margin: 0;
-  }
+  // Il logo "Cruci Sposi" ha sfondo bianco: con multiply il bianco diventa
+  // trasparente e restano solo le lettere, sopra lo sfondo crema/fiori.
+  .site-title {
+    display: inline-block;
+    border: 0;
 
-  h1, p, a {
-    color: #fff !important;
+    &:hover,
+    &:focus-visible {
+      outline: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 170px;
+      height: auto;
+      margin: 0 auto;
+      mix-blend-mode: multiply;
+    }
   }
 }
 
