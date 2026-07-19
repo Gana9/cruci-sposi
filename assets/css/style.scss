@@ -6,6 +6,7 @@
 // ---- Palette fiori ----
 $magenta: #c2a9fb;
 $magenta-dark: #7c5cd6;
+$magenta-darker: #5f43b0;
 $yellow: #fbf814;
 $yellow-soft: #fdfbb0;
 $cream: #fffaf3;
@@ -76,7 +77,7 @@ body::after {
 }
 
 header {
-  background: linear-gradient(135deg, $magenta 0%, $magenta-dark 60%, $yellow 130%);
+  background: linear-gradient(135deg, $magenta-dark 0%, $magenta-darker 65%, $yellow 150%);
   border-radius: 8px;
   text-align: center;
   padding: 1.8rem 1rem;
@@ -134,7 +135,7 @@ header {
   aspect-ratio: 1;
   border-radius: 50%;
   border: 3px solid $yellow;
-  background: $magenta;
+  background: $magenta-dark;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
@@ -149,7 +150,7 @@ header {
   &:hover,
   &:focus-visible {
     transform: scale(1.08);
-    background: $magenta-dark;
+    background: $magenta-darker;
     box-shadow: 0 0 0 4px rgba($yellow, 0.55);
     outline: none;
   }
