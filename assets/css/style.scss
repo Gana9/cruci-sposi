@@ -13,13 +13,16 @@ $cream: #fffaf3;
 // Fiore a 8 petali (magenta) con centro giallo, come SVG inline riusabile.
 $flower-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='28' r='16' fill='%23d6006d'/%3E%3Ccircle cx='50' cy='72' r='16' fill='%23d6006d'/%3E%3Ccircle cx='28' cy='50' r='16' fill='%23d6006d'/%3E%3Ccircle cx='72' cy='50' r='16' fill='%23d6006d'/%3E%3Ccircle cx='34' cy='34' r='16' fill='%23d6006d'/%3E%3Ccircle cx='66' cy='66' r='16' fill='%23d6006d'/%3E%3Ccircle cx='66' cy='34' r='16' fill='%23d6006d'/%3E%3Ccircle cx='34' cy='66' r='16' fill='%23d6006d'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%23ffd400'/%3E%3C/svg%3E";
 
-html, body {
+// Lo sfondo crema sta sull'html; il body resta trasparente cos√¨ i fiori
+// disegnati dietro (z-index negativo) restano sempre visibili.
+html {
   background: $cream;
 }
 
 body {
   position: relative;
   overflow-x: hidden;
+  background: transparent;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -36,6 +39,7 @@ h1, h2, h3, h4, h5, h6,
   margin: 0 auto;
   padding: 1.5rem;
   float: none;
+  background: transparent;
 }
 
 header,
@@ -69,10 +73,6 @@ body::after {
   bottom: -60px;
   right: -60px;
   transform: rotate(20deg);
-}
-
-.wrapper {
-  background: transparent;
 }
 
 header {
