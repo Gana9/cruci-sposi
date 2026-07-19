@@ -24,12 +24,12 @@ body {
   position: relative;
   overflow-x: hidden;
   background: transparent;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pompiere', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6,
 .hint-btn, .modal-close, button {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pompiere', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 // Il tema "minimal" dispone header e contenuto in due colonne sugli schermi
@@ -149,7 +149,7 @@ header {
   border: 3px solid $yellow;
   background: $magenta-dark;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;

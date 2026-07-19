@@ -7,14 +7,14 @@ title: Cruci Sposi
 
 <section class="intro">
   <p class="subtitle">
-    Se resti bloccato su uno dei 14 enigmi del cruciverba, premi il numero corrispondente
+    Se resti bloccato su uno dei 16 indizi del cruciverba, premi il numero corrispondente
     per sbloccare un suggerimento.
   </p>
 </section>
 
-<section class="hint-grid" aria-label="Suggerimenti per gli enigmi">
+<section class="hint-grid" aria-label="Suggerimenti per gli indizi">
 {% for hint in site.data.hints %}
-  <button type="button" class="hint-btn" data-hint="{{ hint.number }}" aria-haspopup="dialog" aria-label="Suggerimento enigma {{ hint.number }}">
+  <button type="button" class="hint-btn" data-hint="{{ hint.number }}" aria-haspopup="dialog" aria-label="Suggerimento indizio {{ hint.number }}">
     <span class="hint-number">{{ hint.number }}</span>
   </button>
 {% endfor %}
@@ -23,7 +23,7 @@ title: Cruci Sposi
 <div id="hints-content" hidden>
 {% for hint in site.data.hints %}
   <div id="hint-{{ hint.number }}">
-    <h2>Enigma {{ hint.number }}</h2>
+    <h2>Indizio {{ hint.number }}</h2>
     <p>{{ hint.text }}</p>
   </div>
 {% endfor %}
