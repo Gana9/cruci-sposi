@@ -1,0 +1,189 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// ---- Palette fiori ----
+$magenta: #d6006d;
+$magenta-dark: #a3004f;
+$yellow: #ffd400;
+$yellow-soft: #fff3c4;
+$cream: #fffaf3;
+
+// Fiore a 8 petali (magenta) con centro giallo, come SVG inline riusabile.
+$flower-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='28' r='16' fill='%23d6006d'/%3E%3Ccircle cx='50' cy='72' r='16' fill='%23d6006d'/%3E%3Ccircle cx='28' cy='50' r='16' fill='%23d6006d'/%3E%3Ccircle cx='72' cy='50' r='16' fill='%23d6006d'/%3E%3Ccircle cx='34' cy='34' r='16' fill='%23d6006d'/%3E%3Ccircle cx='66' cy='66' r='16' fill='%23d6006d'/%3E%3Ccircle cx='66' cy='34' r='16' fill='%23d6006d'/%3E%3Ccircle cx='34' cy='66' r='16' fill='%23d6006d'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%23ffd400'/%3E%3C/svg%3E";
+
+html, body {
+  background: $cream;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Fiori "filigrana" fissi agli angoli della pagina.
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  background-image: url("#{$flower-svg}");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  top: -60px;
+  left: -60px;
+}
+
+body::after {
+  bottom: -60px;
+  right: -60px;
+  transform: rotate(20deg);
+}
+
+.wrapper {
+  background: transparent;
+}
+
+header {
+  background: linear-gradient(135deg, $magenta 0%, $magenta-dark 60%, $yellow 130%);
+  border-radius: 8px;
+
+  h1, p, a {
+    color: #fff !important;
+  }
+}
+
+// Striscia decorativa con fiorellini ripetuti, usata come separatore.
+.floral-divider {
+  height: 42px;
+  margin: 1.5rem auto;
+  max-width: 640px;
+  background-image: url("#{$flower-svg}");
+  background-repeat: repeat-x;
+  background-size: 42px 42px;
+  background-position: center;
+  opacity: 0.85;
+}
+
+.intro {
+  text-align: center;
+
+  h1 {
+    color: $magenta-dark;
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .subtitle {
+    color: #555;
+    max-width: 34rem;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+.hint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 1rem;
+  max-width: 620px;
+  margin: 1.5rem auto 2rem;
+}
+
+.hint-btn {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid $yellow;
+  background: $magenta;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.08);
+    background: $magenta-dark;
+    box-shadow: 0 0 0 4px rgba($yellow, 0.55);
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// ---- Modale (popup suggerimento) ----
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 10, 30, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  max-width: 480px;
+  width: 100%;
+  padding: 2.2rem 1.8rem 1.8rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  border-top: 8px solid $magenta;
+  background-image: linear-gradient(90deg, $magenta 0%, $magenta 50%, $yellow 50%, $yellow 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 8px;
+  background-position: top;
+
+  h2 {
+    color: $magenta-dark;
+    margin-top: 0;
+  }
+
+  p {
+    color: #333;
+    line-height: 1.5;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: $yellow-soft;
+  border: 2px solid $yellow;
+  color: $magenta-dark;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: $yellow;
+    outline: none;
+  }
+}

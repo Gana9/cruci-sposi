@@ -1,0 +1,30 @@
+# Un blocco per ogni enigma del cruciverba.
+# Modifica solo il campo "text": puoi usare markdown semplice (grassetto, corsivo, link).
+- number: 1
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 1."
+- number: 2
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 2."
+- number: 3
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 3."
+- number: 4
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 4."
+- number: 5
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 5."
+- number: 6
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 6."
+- number: 7
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 7."
+- number: 8
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 8."
+- number: 9
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 9."
+- number: 10
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 10."
+- number: 11
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 11."
+- number: 12
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 12."
+- number: 13
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 13."
+- number: 14
+  text: "Sostituisci questo testo con il suggerimento per l'enigma 14."
