@@ -6,7 +6,6 @@ title: Cruci Sposi
 <div class="floral-divider" aria-hidden="true"></div>
 
 <section class="intro">
-  <h1>Cruci Sposi</h1>
   <p class="subtitle">
     Se resti bloccato su uno dei 14 enigmi del cruciverba, premi il numero corrispondente
     per sbloccare un suggerimento.

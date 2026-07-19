@@ -20,6 +20,29 @@ html, body {
 body {
   position: relative;
   overflow-x: hidden;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hint-btn, .modal-close, button {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+// Il tema "minimal" dispone header e contenuto in due colonne sugli schermi
+// larghi: qui li rimettiamo in colonna singola, header centrato in alto.
+.wrapper {
+  width: auto;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  float: none;
+}
+
+header,
+section {
+  float: none;
+  width: auto;
+  position: static;
 }
 
 // Fiori "filigrana" fissi agli angoli della pagina.
@@ -55,6 +78,16 @@ body::after {
 header {
   background: linear-gradient(135deg, $magenta 0%, $magenta-dark 60%, $yellow 130%);
   border-radius: 8px;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
 
   h1, p, a {
     color: #fff !important;
