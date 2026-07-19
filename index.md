@@ -1,40 +1,42 @@
 ---
 layout: default
-title: La Storia del Nostro Agriturismo
+title: Cruci Sposi
 ---
 
-# Benvenuti all'Agriturismo
+<div class="floral-divider" aria-hidden="true"></div>
 
-Utilizza i link sottostanti per esplorare la nostra realtà e la nostra terra.
+<section class="intro">
+  <h1>Cruci Sposi</h1>
+  <p class="subtitle">
+    Se resti bloccato su uno dei 14 enigmi del cruciverba, premi il numero corrispondente
+    per sbloccare un suggerimento.
+  </p>
+</section>
 
-### Indice dei Contenuti
-* [Chi Siamo](#chi-siamo)
-* [Dove Siamo](#dove-siamo)
-* [La Nostra Storia](#la-nostra-storia)
+<section class="hint-grid" aria-label="Suggerimenti per gli enigmi">
+{% for hint in site.data.hints %}
+  <button type="button" class="hint-btn" data-hint="{{ hint.number }}" aria-haspopup="dialog" aria-label="Suggerimento enigma {{ hint.number }}">
+    <span class="hint-number">{{ hint.number }}</span>
+  </button>
+{% endfor %}
+</section>
 
----
+<div id="hints-content" hidden>
+{% for hint in site.data.hints %}
+  <div id="hint-{{ hint.number }}">
+    <h2>Enigma {{ hint.number }}</h2>
+    <p>{{ hint.text }}</p>
+  </div>
+{% endfor %}
+</div>
 
-## Chi Siamo
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-body">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Chiudi suggerimento">&times;</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
 
-Siamo una famiglia dedita alla terra e all'ospitalità da generazioni. Il nostro obiettivo è far vivere ai nostri ospiti un'esperienza autentica, a stretto contatto con la natura, i ritmi della campagna e i sapori di una volta. Ogni piatto che serviamo racconta la passione che mettiamo nella coltivazione biologica e nel rispetto della biodiversità.
+<div class="floral-divider" aria-hidden="true"></div>
 
-[Torna all'indice](#indice-dei-contenuti)
-
----
-
-## Dove Siamo
-
-Ci troviamo immersi tra le verdi colline, lontano dal caos cittadino ma facilmente raggiungibili. La nostra struttura è circondata da uliveti secolari e vigneti, offrendo una vista panoramica che rigenera lo spirito. 
-
-* **Indirizzo:** Via delle Botti 12, Località Campagna
-* **Coordinate per il navigatore:** Potete cercarci direttamente su Google Maps come "Agriturismo Esempio".
-
-[Torna all'indice](#indice-dei-contenuti)
-
----
-
-## La Nostra Storia
-
-Tutto è iniziato nei primi anni del Novecento, quando il bisnonno decise di acquistare questo antico casale in pietra, all'epoca utilizzato solo come rifugio agricolo. Nel corso dei decenni abbiamo restaurato le mura mantenendo intatto il fascino storico, trasformando stalle e fienili in camere accoglienti. Oggi, quella che era una semplice azienda agricola è diventata un luogo di incontro, relax e tradizione.
-
-[Torna all'indice](#indice-dei-contenuti)
+<script src="{{ '/assets/js/hints.js' | relative_url }}"></script>
