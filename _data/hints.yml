@@ -1,34 +1,32 @@
-# Un blocco per ogni indizio del cruciverba.
-# Modifica solo il campo "text": puoi usare markdown semplice (grassetto, corsivo, link).
 - number: 1
-  text: "Facile, è un fiume famoso."
+  text: "Grottaferatesi ne abbiamo? Facile, è un fiume!"
 - number: 2
-  text: "Qui ci vuole un francese che parla italiano."
+  text: "Ci vuole un vero francese, ah ma parla anche italiano."
 - number: 3
-  text: "Neanche i beduini ne consumano così tanta."
+  text: "Mi è semblato di vedele un pelato in plima fila"
 - number: 4
-  text: "Credo che non sia un'opinione, ma a volte la chiamano in altri termini."
+  text: "Il menestrello sà, ma vi avverto...potreste perdervi nei tempi accademici!"
 - number: 5
-  text: "Occhio che ha solo cose firmate."
+  text: "Fermi tutti...chi ha ingaggiato Rkomi per la musica?"
 - number: 6
-  text: "Ma non avevamo invitato degli stand-up comedian !?."
+  text: "Ma non avevamo ingaggiato degli stand-up comedian?"
 - number: 7
-  text: "La testimoni ne sono testimoni, oppure mentono !?."
+  text: "Le testimoni ne sono testimoni...oppure mentono?"
 - number: 8
-  text: "Non è forse una vita di schiavitù?."
+  text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
 - number: 9
-  text: "Sia benedetta l'AI che lobotomizerà il mondo."
+  text: "C'è della magia Parigina anche nelle Marche." --> dire la parola a Valentina
 - number: 10
-  text: "Alla fine è la pastarella dei bambini."
+  text: "Sbaglio o c'è una tifosa romagnola di Sinner al buffet?" --> Monica
 - number: 11
-  text: "Che alla fine è rionale."
+  text: "Cercate il Nabbo, e chiedete del lunedì mattina da giovini."
 - number: 12
-  text: "Scusate, c'è un pelato in sala?."
+  text: "Chiede alla sposa dei cigni, ma attenzione potrebbe fraintendere"
 - number: 13
   text: "Gli amici sanno e condividono."
 - number: 14
-  text: "Scusate, C'è un'altro pelato in sala?."
+  text: "Guarda! C'è un Capretto! Non sapevo vivessero anche ai castelli romani"
 - number: 15
   text: "48.8398312630342, 2.3370240916834906 - affondato, cavolo era quella da uno."
 - number: 16
-  text: "Qui ci vuole un italiano che parla francese."
+  text: "Je n'ai pas compris, de quel parc to parles?"
