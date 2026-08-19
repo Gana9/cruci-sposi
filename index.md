@@ -7,8 +7,7 @@ title: Cruci Sposi
 
 <section class="intro">
   <p class="subtitle">
-    Se resti bloccato su uno dei 16 indizi del cruciverba, premi il numero corrispondente
-    per sbloccare un suggerimento.
+    Se resti bloccato sulle parole del cruciverba, premi il numero corrispondente per sbloccare un suggerimento.
   </p>
 </section>
 
