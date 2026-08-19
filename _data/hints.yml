@@ -1,32 +1,31 @@
 - number: 1
-  text: "Grottaferatesi ne abbiamo? Facile, è un fiume!"
+  image: "/assets/images/hint-1.jpg"
 - number: 2
-  text: "Ci vuole un vero francese, ah ma parla anche italiano."
+  text: "Guarda! C'è un Capretto riccioluto nella famiglia dello sposo!"
 - number: 3
-  text: "Mi è semblato di vedele un pelato in plima fila"
-- number: 4
-  text: "Il menestrello sà, ma vi avverto...potreste perdervi nei tempi accademici!"
-- number: 5
-  text: "Fermi tutti...chi ha ingaggiato Rkomi per la musica?"
-- number: 6
-  text: "Ma non avevamo ingaggiato degli stand-up comedian?"
-- number: 7
-  text: "Le testimoni ne sono testimoni...oppure mentono?"
-- number: 8
-  text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
-- number: 9
-  text: "C'è della magia Parigina anche nelle Marche."
-- number: 10
-  text: "Sbaglio o c'è una tifosa romagnola di Sinner al buffet?"
-- number: 11
-  text: "Cercate il Nabbo, e chiedete del lunedì mattina da giovini."
-- number: 12
-  text: "Chiede alla sposa dei cigni, ma attenzione potrebbe fraintendere"
-- number: 13
   text: "Gli amici sanno e condividono."
+- number: 4
+  text: "Le testimoni ne sono testimoni...oppure mentono?" #
+  soluzione: "Quattordicesimo"
+- number: 5
+  text: "Chiede alla sposa dei cigni, ma attenzione potrebbe fraintendere"
+- number: 6
+  text: "Mi è semblato di vedele un pelato in plima fila" #
+  soluzione: "tisana"
+- number: 7
+  text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
+- number: 8
+  text: "Cercate il Nabbo e chiedete del lunedì mattina da giovini."
+- number: 9
+  text: "Ma non avevamo ingaggiato degli stand-up comedian?"
+- number: 10
+  text: "Grottaferatesi ne abbiamo? Facile, è un fiume!"
+- number: 11
+  text: "Il menestrello sà, ma vi avverto...potreste perdervi nei tempi accademici!" #
+- number: 12
+  text: "Alcuni lo chiamano anche acqua zozza, ma non concordiamo"
+- number: 13
+  text: "Sbaglio o c'è una tifosa romagnola di Sinner al buffet?" #
 - number: 14
-  text: "Guarda! C'è un Capretto! Non sapevo vivessero anche ai castelli romani"
-- number: 15
-  text: "48.8398312630342, 2.3370240916834906 - affondato, cavolo era quella da uno."
-- number: 16
-  text: "Je n'ai pas compris, de quel parc to parles?"
+  text: "Qui ci vorrebbe un francese, ah ma c'è e parla anche italiano."
+  # text: "92000 - affondato, cavolo era quella da uno."
