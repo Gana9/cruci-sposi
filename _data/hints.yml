@@ -5,12 +5,11 @@
 - number: 3
   text: "Gli amici sanno e condividono."
 - number: 4
-  text: "Le testimoni ne sono testimoni...oppure mentono?" #
-  soluzione: "Quattordicesimo"
+  text: "Ci sono delle testimoni che hanno assisto a questo crimine, andiamo ad intervistarle!"
 - number: 5
-  text: "Chiede alla sposa dei cigni, ma attenzione potrebbe fraintendere"
+  text: "Chiedi alla sposa dei cigni... ma attenzione, potrebbe fraintendere."
 - number: 6
-  text: "Mi è semblato di vedele un pelato in plima fila" #
+  text: "E' buona qui, è buona qui."
   soluzione: "tisana"
 - number: 7
   text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
@@ -25,7 +24,7 @@
 - number: 12
   text: "Alcuni lo chiamano anche acqua zozza, ma non concordiamo"
 - number: 13
-  text: "Sbaglio o c'è una tifosa romagnola di Sinner al buffet?" #
+  image: "/assets/images/hint-11.png"
 - number: 14
   text: "Qui ci vorrebbe un francese, ah ma c'è e parla anche italiano."
   # text: "92000 - affondato, cavolo era quella da uno."
