@@ -242,3 +242,10 @@ header {
     outline: none;
   }
 }
+
+.hint-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #cccccc; /* Scegli un colore grigio o neutro che preferisci */
+  border-color: #999999;
+}
