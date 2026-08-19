@@ -24,7 +24,12 @@ title: Cruci Sposi
 {% for hint in site.data.hints %}
   <div id="hint-{{ hint.number }}">
     <h2>Indizio {{ hint.number }}</h2>
-    <p>{{ hint.text }}</p>
+    {% if hint.image %}
+      <img src="{{ hint.image | relative_url }}" alt="Immagine suggerimento {{ hint.number }}" class="hint-image" style="max-width: 100%; height: auto; display: block; margin: 10px auto;">
+    {% endif %}
+    {% if hint.text %}
+      <p>{{ hint.text }}</p>
+    {% endif %}
   </div>
 {% endfor %}
 </div>
