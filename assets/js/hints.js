@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
   var closeBtn = document.getElementById('modal-close');
   var lastFocused = null;
 
+  // --- INIZIO GESTIONE LOCAL STORAGE ---
+  var storageKey = "cruciSposi_viewedHints"; 
+  var viewedHints = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+  // Al caricamento, cerca i bottoni già visti e aggiunge la classe CSS "viewed"
+  viewedHints.forEach(function(number) {
+    var btn = document.querySelector('.hint-btn[data-hint="' + number + '"]');
+    if (btn) {
+      btn.classList.add("viewed");
+    }
+  });
+  // --- FINE GESTIONE LOCAL STORAGE ---
+
   function openModal(number) {
     var source = document.getElementById('hint-' + number);
     if (!source) return;
@@ -31,7 +44,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      openModal(btn.getAttribute('data-hint'));
+      var hintNumber = btn.getAttribute('data-hint');
+
+      // --- AGGIORNAMENTO LOCAL STORAGE AL CLICK ---
+      if (!viewedHints.includes(hintNumber)) {
+        viewedHints.push(hintNumber);
+        localStorage.setItem(storageKey, JSON.stringify(viewedHints));
+        btn.classList.add("viewed"); // Aggiunge la classe visivamente in tempo reale
+      }
+      // -------------------------------------------
+
+      openModal(hintNumber);
     });
   });
 
