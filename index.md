@@ -3,7 +3,7 @@ layout: default
 title: Cruci Sposi
 ---
 
-<div class="floral-divider" aria-hidden="true"></div>
+[//]: # (<div class="floral-divider" aria-hidden="true"></div>)
 
 <section class="intro">
   <p class="subtitle">
@@ -26,6 +26,7 @@ title: Cruci Sposi
     {% if hint.image %}
       <img src="{{ hint.image | relative_url }}" alt="Immagine suggerimento {{ hint.number }}" class="hint-image" style="max-width: 100%; height: auto; display: block; margin: 10px auto;">
     {% endif %}
+    
     {% if hint.text %}
       <p>{{ hint.text }}</p>
     {% endif %}
@@ -40,6 +41,6 @@ title: Cruci Sposi
   </div>
 </div>
 
-<div class="floral-divider" aria-hidden="true"></div>
+[//]: # (<div class="floral-divider" aria-hidden="true"></div>)
 
 <script src="{{ '/assets/js/hints.js' | relative_url }}"></script>
