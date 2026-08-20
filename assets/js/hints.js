@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var lastFocused = null;
 
   // --- INIZIO GESTIONE LOCAL STORAGE ---
-  var storageKey = "cruciSposi_viewedHints"; 
+  var storageKey = "cruciSposi_viewedHints";
   var viewedHints = JSON.parse(localStorage.getItem(storageKey)) || [];
 
   // Al caricamento, segna come visti e disabilita i bottoni salvati nel browser
   viewedHints.forEach(function(number) {
     var btn = document.querySelector('.hint-btn[data-hint="' + number + '"]');
     if (btn) {
-      btn.classList.add("viewed");
-      btn.disabled = true; // Rende il bottone non cliccabile
+      // btn.classList.add("viewed");
+      // btn.disabled = true; // Rende il bottone non cliccabile
     }
   });
   // --- FINE GESTIONE LOCAL STORAGE ---
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!viewedHints.includes(hintNumber)) {
         viewedHints.push(hintNumber);
         localStorage.setItem(storageKey, JSON.stringify(viewedHints));
-        btn.classList.add("viewed");
-        btn.disabled = true; // Disabilita subito al click
+        // btn.classList.add("viewed");
+        // btn.disabled = true; // Disabilita subito al click
       }
       // -------------------------------------------
 
