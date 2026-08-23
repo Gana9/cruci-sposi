@@ -272,6 +272,15 @@ header {
     transform: scale(1.05);
     outline: none;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    background: #e6e6e6;
+    border-color: #bdbdbd;
+    color: #777;
+    transform: none;
+  }
 }
 
 .hint-second {

@@ -11,11 +11,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // disponibile solo dopo che il primo è già stato visto (anche in una
   // sessione precedente, perché lo stato è persistito nel browser).
   var storageKey = "cruciSposi_viewedHints";
-  var viewedHints = [];
-  try {
-    viewedHints = JSON.parse(localStorage.getItem(storageKey)) || [];
-  } catch (e) {
-    viewedHints = [];
+  var revealedKey = "cruciSposi_revealedLevel2";
+  var viewedHints = readList(storageKey);      // primi suggerimenti già aperti
+  var revealedHints = readList(revealedKey);   // secondi suggerimenti già rivelati (una tantum)
+
+  function readList(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveList(key, list) {
+    try {
+      localStorage.setItem(key, JSON.stringify(list));
+    } catch (e) {
+      /* localStorage non disponibile: la funzione degrada senza errori */
+    }
   }
 
   function isViewed(number) {
@@ -26,11 +39,19 @@ document.addEventListener('DOMContentLoaded', function () {
     number = String(number);
     if (viewedHints.indexOf(number) === -1) {
       viewedHints.push(number);
-      try {
-        localStorage.setItem(storageKey, JSON.stringify(viewedHints));
-      } catch (e) {
-        /* localStorage non disponibile: la funzione degrada senza errori */
-      }
+      saveList(storageKey, viewedHints);
+    }
+  }
+
+  function isLevel2Revealed(number) {
+    return revealedHints.indexOf(String(number)) !== -1;
+  }
+
+  function markLevel2Revealed(number) {
+    number = String(number);
+    if (revealedHints.indexOf(number) === -1) {
+      revealedHints.push(number);
+      saveList(revealedKey, revealedHints);
     }
   }
   // --- FINE GESTIONE LOCAL STORAGE ---
@@ -54,20 +75,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (level2 && canShowLevel2) {
+      var alreadyRevealed = isLevel2Revealed(number);
+
       var revealBtn = document.createElement('button');
       revealBtn.type = 'button';
       revealBtn.className = 'hint-second-btn';
-      revealBtn.textContent = 'Mostra secondo suggerimento';
 
       var container = document.createElement('div');
       container.className = 'hint-second';
-      container.hidden = true;
       container.innerHTML = level2.innerHTML;
 
-      revealBtn.addEventListener('click', function () {
-        container.hidden = false;
-        revealBtn.hidden = true;
-      });
+      if (alreadyRevealed) {
+        // Il secondo suggerimento è consumabile una sola volta: se è già
+        // stato rivelato, il pulsante resta disabilitato e il contenuto
+        // non viene mostrato di nuovo.
+        revealBtn.textContent = 'Secondo suggerimento già visto';
+        revealBtn.disabled = true;
+        container.hidden = true;
+      } else {
+        revealBtn.textContent = 'Mostra secondo suggerimento';
+        container.hidden = true;
+
+        revealBtn.addEventListener('click', function () {
+          container.hidden = false;
+          revealBtn.disabled = true;
+          revealBtn.textContent = 'Secondo suggerimento già visto';
+          markLevel2Revealed(number);
+        });
+      }
 
       modalBody.appendChild(revealBtn);
       modalBody.appendChild(container);
