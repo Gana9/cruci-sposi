@@ -18,7 +18,7 @@
   text: "Chiedi alla sposa dei cigni... ma attenzione, potrebbe fraintendere."
 - number: 6
   text: "E' buona qui, è buona qui."
-  soluzione: "tisana"
+  # soluzione: "tisana"
 - number: 7
   text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
 - number: 8
@@ -38,5 +38,5 @@
   image: "/assets/images/hint-11.png"
 - number: 14
   text: "Qui ci vorrebbe un francese, ah ma c'è e parla anche italiano."
-  image2: "/assets/images/hint-11.png"
+  image2: "/assets/images/hint-14.png"
   # text: "92000 - affondato, cavolo era quella da uno."
