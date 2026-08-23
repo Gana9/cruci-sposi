@@ -6,23 +6,73 @@ document.addEventListener('DOMContentLoaded', function () {
   var lastFocused = null;
 
   // --- INIZIO GESTIONE LOCAL STORAGE ---
+  // Teniamo traccia degli indizi già visualizzati almeno una volta.
+  // Serve a sbloccare il SECONDO livello di suggerimento: diventa
+  // disponibile solo dopo che il primo è già stato visto (anche in una
+  // sessione precedente, perché lo stato è persistito nel browser).
   var storageKey = "cruciSposi_viewedHints";
-  var viewedHints = JSON.parse(localStorage.getItem(storageKey)) || [];
+  var viewedHints = [];
+  try {
+    viewedHints = JSON.parse(localStorage.getItem(storageKey)) || [];
+  } catch (e) {
+    viewedHints = [];
+  }
 
-  // Al caricamento, segna come visti e disabilita i bottoni salvati nel browser
-  viewedHints.forEach(function(number) {
-    var btn = document.querySelector('.hint-btn[data-hint="' + number + '"]');
-    if (btn) {
-      // btn.classList.add("viewed");
-      // btn.disabled = true; // Rende il bottone non cliccabile
+  function isViewed(number) {
+    return viewedHints.indexOf(String(number)) !== -1;
+  }
+
+  function markViewed(number) {
+    number = String(number);
+    if (viewedHints.indexOf(number) === -1) {
+      viewedHints.push(number);
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(viewedHints));
+      } catch (e) {
+        /* localStorage non disponibile: la funzione degrada senza errori */
+      }
     }
-  });
+  }
   // --- FINE GESTIONE LOCAL STORAGE ---
 
-  function openModal(number) {
+  // Costruisce il contenuto del modale.
+  // canShowLevel2 = true solo se l'indizio era GIA' stato visto prima di
+  // questo click: in tal caso mostriamo il pulsante per il secondo livello.
+  function openModal(number, canShowLevel2) {
     var source = document.getElementById('hint-' + number);
     if (!source) return;
-    modalBody.innerHTML = source.innerHTML;
+
+    var level1 = source.querySelector('.hint-level-1');
+    var level2 = source.querySelector('.hint-level-2');
+
+    modalBody.innerHTML = '';
+    if (level1) {
+      modalBody.innerHTML = level1.innerHTML;
+    } else {
+      // Fallback per indizi senza struttura a livelli.
+      modalBody.innerHTML = source.innerHTML;
+    }
+
+    if (level2 && canShowLevel2) {
+      var revealBtn = document.createElement('button');
+      revealBtn.type = 'button';
+      revealBtn.className = 'hint-second-btn';
+      revealBtn.textContent = 'Mostra secondo suggerimento';
+
+      var container = document.createElement('div');
+      container.className = 'hint-second';
+      container.hidden = true;
+      container.innerHTML = level2.innerHTML;
+
+      revealBtn.addEventListener('click', function () {
+        container.hidden = false;
+        revealBtn.hidden = true;
+      });
+
+      modalBody.appendChild(revealBtn);
+      modalBody.appendChild(container);
+    }
+
     overlay.hidden = false;
     lastFocused = document.activeElement;
     closeBtn.focus();
@@ -47,16 +97,12 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', function () {
       var hintNumber = btn.getAttribute('data-hint');
 
-      // --- AGGIORNAMENTO LOCAL STORAGE AL CLICK ---
-      if (!viewedHints.includes(hintNumber)) {
-        viewedHints.push(hintNumber);
-        localStorage.setItem(storageKey, JSON.stringify(viewedHints));
-        // btn.classList.add("viewed");
-        // btn.disabled = true; // Disabilita subito al click
-      }
-      // -------------------------------------------
+      // Il secondo livello è visibile solo se il primo era già stato visto
+      // PRIMA di questo click. Leggiamo lo stato, poi registriamo la visione.
+      var alreadyViewed = isViewed(hintNumber);
+      markViewed(hintNumber);
 
-      openModal(hintNumber);
+      openModal(hintNumber, alreadyViewed);
     });
   });
 

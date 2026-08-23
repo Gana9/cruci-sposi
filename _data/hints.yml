@@ -1,3 +1,11 @@
+# Campi disponibili per ogni indizio:
+#   number    -> numero dell'indizio (obbligatorio)
+#   text      -> primo suggerimento (testo)
+#   image     -> primo suggerimento (immagine)
+# Secondo livello (mostrato solo dopo aver già visto il primo):
+#   text2     -> secondo suggerimento (testo)
+#   image2    -> secondo suggerimento (immagine)
+#   soluzione -> parola/soluzione, mostrata nel secondo livello
 - number: 1
   image: "/assets/images/hint-1.jpg"
 - number: 2
@@ -15,6 +23,7 @@
   text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
 - number: 8
   text: "Quello del lunedì mattina che il Nabbo ricorda bene... ma in francese!"
+  text2: "In Italia è rionale."
 - number: 9
   text: "Ma non avevamo ingaggiato degli stand-up comedian?"
 - number: 10
@@ -29,5 +38,5 @@
   image: "/assets/images/hint-11.png"
 - number: 14
   text: "Qui ci vorrebbe un francese, ah ma c'è e parla anche italiano."
-  # image: "/assets/images/hint-11.png"
+  image2: "/assets/images/hint-11.png"
   # text: "92000 - affondato, cavolo era quella da uno."

@@ -22,12 +22,28 @@ title: Cruci Sposi
 <div id="hints-content" hidden>
 {% for hint in site.data.hints %}
   <div id="hint-{{ hint.number }}">
-    <h2>Indizio {{ hint.number }}</h2>
-    {% if hint.text %}
-      <p>{{ hint.text }}</p>
-    {% endif %}
-    {% if hint.image %}
-      <img src="{{ hint.image | relative_url }}" alt="Immagine suggerimento {{ hint.number }}" class="hint-image" style="max-width: 100%; height: auto; display: block; margin: 10px auto;">
+    <div class="hint-level-1">
+      <h2>Indizio {{ hint.number }}</h2>
+      {% if hint.text %}
+        <p>{{ hint.text }}</p>
+      {% endif %}
+      {% if hint.image %}
+        <img src="{{ hint.image | relative_url }}" alt="Immagine suggerimento {{ hint.number }}" class="hint-image" style="max-width: 100%; height: auto; display: block; margin: 10px auto;">
+      {% endif %}
+    </div>
+    {% if hint.text2 or hint.image2 or hint.soluzione %}
+    <div class="hint-level-2">
+      <h2>Secondo suggerimento</h2>
+      {% if hint.text2 %}
+        <p>{{ hint.text2 }}</p>
+      {% endif %}
+      {% if hint.image2 %}
+        <img src="{{ hint.image2 | relative_url }}" alt="Seconda immagine suggerimento {{ hint.number }}" class="hint-image" style="max-width: 100%; height: auto; display: block; margin: 10px auto;">
+      {% endif %}
+      {% if hint.soluzione %}
+        <p class="hint-solution">Soluzione: <strong>{{ hint.soluzione | upcase }}</strong></p>
+      {% endif %}
+    </div>
     {% endif %}
   </div>
 {% endfor %}

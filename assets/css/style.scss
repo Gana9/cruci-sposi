@@ -249,3 +249,46 @@ header {
   background-color: #cccccc; /* Scegli un colore grigio o neutro che preferisci */
   border-color: #999999;
 }
+
+// ---- Secondo livello di suggerimento ----
+// Pulsante mostrato nel modale solo se il primo suggerimento è già stato
+// visto in precedenza (stato salvato in localStorage).
+.hint-second-btn {
+  display: block;
+  margin: 1.2rem auto 0;
+  padding: 0.5rem 1.1rem;
+  background: $yellow-soft;
+  border: 2px solid $yellow;
+  border-radius: 999px;
+  color: $magenta-darker;
+  font-size: 1.4rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: $yellow;
+    transform: scale(1.05);
+    outline: none;
+  }
+}
+
+.hint-second {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 2px dashed rgba($magenta, 0.5);
+
+  &[hidden] {
+    display: none;
+  }
+
+  h2 {
+    color: $magenta-darker;
+  }
+}
+
+.hint-solution strong {
+  color: $magenta-darker;
+  letter-spacing: 0.05em;
+}
