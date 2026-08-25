@@ -75,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (level2 && canShowLevel2) {
-      var alreadyRevealed = isLevel2Revealed(number);
+      // var alreadyRevealed = isLevel2Revealed(number);
+      var alreadyRevealed = false;
 
       var revealBtn = document.createElement('button');
       revealBtn.type = 'button';
