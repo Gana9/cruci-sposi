@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         revealBtn.addEventListener('click', function () {
           container.hidden = false;
           revealBtn.disabled = true;
-          revealBtn.textContent = 'Secondo suggerimento già visto';
+          // revealBtn.textContent = 'Secondo suggerimento già visto';
           markLevel2Revealed(number);
         });
       }
