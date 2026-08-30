@@ -32,7 +32,8 @@
   # text: "Il menestrello sà, ma vi avverto...potreste perdervi nei tempi accademici!" #
   text: "Diciamo che sono poco raccomandabili a inizio Gennaio."
 - number: 12
-  text: "Espresso diluito ed abbondante"
+  # text: "Espresso diluito ed abbondante"
+  image: "/assets/images/hint-12.jpg"
 - number: 13
   text: "Qui est ce personage?"
   image: "/assets/images/hint-11.png"
