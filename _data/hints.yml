@@ -1,13 +1,6 @@
-# Campi disponibili per ogni indizio:
-#   number    -> numero dell'indizio (obbligatorio)
-#   text      -> primo suggerimento (testo)
-#   image     -> primo suggerimento (immagine)
-# Secondo livello (mostrato solo dopo aver già visto il primo):
-#   text2     -> secondo suggerimento (testo)
-#   image2    -> secondo suggerimento (immagine)
-#   soluzione -> parola/soluzione, mostrata nel secondo livello
 - number: 1
   image: "/assets/images/hint-1.jpg"
+  text2: "48.84308342609033, 2.3373488860412293 affondata! cavolo era quella da uno"
 - number: 2
   text: "Guarda! C'è un Capretto riccioluto nella famiglia dello sposo!"
 - number: 3
@@ -15,9 +8,10 @@
 - number: 4
   text: "Ci sono delle testimoni che hanno assisto a questo crimine, andiamo ad intervistarle!"
 - number: 5
-  text: "Chiedi alla sposa dei cigni... ma attenzione, potrebbe fraintendere."
+  text: "Chiedete alla sposa dei cigni... ma attenzione, potrebbe fraintendere."
 - number: 6
   text: "E' buona qui, è buona qui."
+  text2: "Se non ci credete chiedete a SunnyBoy."
   # soluzione: "tisana"
 - number: 7
   text: "Chiedete direttamente all'interessato, ma non fidatevi di quello che vi dice."
@@ -27,16 +21,19 @@
 - number: 9
   text: "Ma non avevamo ingaggiato degli stand-up comedian?"
 - number: 10
-  text: "Grottaferatesi ne abbiamo? Facile, è un fiume!"
+  #text: "Grottaferatesi ne abbiamo? Facile, è un fiume!"
+  text: "Chiedete a chi fa piove e fioccà"
+  text2: "Ma che cosa rappresentano i nomi dei tavoli?"
 - number: 11
-  # text: "Il menestrello sà, ma vi avverto...potreste perdervi nei tempi accademici!" #
-  text: "Diciamo che sono poco raccomandabili a inizio Gennaio."
+  text: "Cercate il menestrello! Narratore di storie infinite"
+  text2: "Diciamo che sono poco raccomandabili a inizio Gennaio."
 - number: 12
-  # text: "Espresso diluito ed abbondante"
   image: "/assets/images/hint-12.jpg"
+  # text2: "Sganauei"
 - number: 13
   text: "Qui est ce personage?"
   image: "/assets/images/hint-11.png"
+  image2: 'Cercate "La dame qui glisse"!'
 - number: 14
   text: "Qui ci vorrebbe un francese, ah ma c'è e parla anche italiano."
   image2: "/assets/images/hint-14.jpg"
